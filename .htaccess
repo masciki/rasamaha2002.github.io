@@ -1,0 +1,15 @@
+AddDefaultCharset utf-8
+ErrorDocument 400 /includes/errors/400.php
+ErrorDocument 401 /includes/errors/401.php
+ErrorDocument 403 /includes/errors/403.php
+ErrorDocument 404 /includes/errors/404.php
+ErrorDocument 500 /includes/errors/500.php
+Options -Indexes
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteRule ^answers/id(.*)$ answers/?id=$1 [L,QSA]
+</IfModule>
+<FilesMatch "\.(php|php3|php4|php5|php6|phtml|phps)$|^$">
+Order allow,deny
+Allow from all
+</FilesMatch>
